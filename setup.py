@@ -2,32 +2,32 @@ import setuptools
 import subprocess
 import os
 
-cf_remote_version = (
+Inde_Abbre_version = (
     subprocess.run(["git", "describe", "--tags"], stdout=subprocess.PIPE)
     .stdout.decode("utf-8")
     .strip()
 )
 
-if "-" in cf_remote_version:
+if "-" in Inde_Abbre_version:
     # when not on tag, git describe outputs: "1.3.3-22-gdf81228"
     # pip has gotten strict with version numbers
     # so change it to: "1.3.3+22.git.gdf81228"
     # See: https://peps.python.org/pep-0440/#local-version-segments
-    v,i,s = cf_remote_version.split("-")
-    cf_remote_version = v + "+" + i + ".git." + s
+    v,i,s = Inde_Abbre_version.split("-")
+    Inde_Abbre_version = v + "+" + i + ".git." + s
 
-assert "-" not in cf_remote_version
-assert "." in cf_remote_version
+assert "-" not in Inde_Abbre_version
+assert "." in Inde_Abbre_version
 
 assert os.path.isfile("cf_remote/version.py")
 with open("cf_remote/VERSION", "w", encoding="utf-8") as fh:
-    fh.write("%s\n" % cf_remote_version)
+    fh.write("%s\n" % Inde_Abbre_version)
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="cf-remote",
+    name="Inde_Abbre",
     version=cf_remote_version,
     author="Richard Alphonse",
     author_email="richardriche96@gmail.com",
@@ -36,7 +36,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Richardalphonse/cf-remote",
     packages=setuptools.find_packages(),
-    package_data={"cf_remote": ["VERSION"]},
+    package_data={"Inde_Abbre": ["VERSION"]},
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -44,7 +44,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.5",
-    entry_points={"console_scripts": ["cf-remote = cf_remote.main:main"]},
+    entry_points={"console_scripts": ["Inde_Abbre = cf_remote.main:main"]},
     install_requires=[
         "requests >= 2.25.1",
         "apache-libcloud >= 3.3.1",
