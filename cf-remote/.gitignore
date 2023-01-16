@@ -1,0 +1,8 @@
+build
+dist
+/cf_remote/VERSION
+/cf_remote/__pycache__/
+/cf_remote.egg-info/
+/venv
+/.venv
+__pycache__/
