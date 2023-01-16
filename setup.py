@@ -28,7 +28,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="Inde_Abbre",
-    version=cf_remote_version,
+    version=Inde_Abbre_version,
     author="Richard Alphonse",
     author_email="richardriche96@gmail.com",
     description="Tooling to deploy CFEngine (and much more)",
