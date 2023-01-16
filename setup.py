@@ -29,8 +29,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
     name="cf-remote",
     version=cf_remote_version,
-    author="Northern.tech, Inc.",
-    author_email="contact@northern.tech",
+    author="Richard Alphonse",
+    author_email="richardriche96@gmail.com",
     description="Tooling to deploy CFEngine (and much more)",
     long_description=long_description,
     long_description_content_type="text/markdown",
